@@ -8,7 +8,15 @@ SPAM:SetDescription("Spams the defuse button on the bomb.")
 local spamToggle = false
 local waitTicks = 0
 local defusing = false
-
+callbacks.Register( "Draw", function()
+    if CHECKBOX:GetValue() then
+        SLIDER:SetInvisible(false)
+        SPAM:SetInvisible(false)
+    else
+        SLIDER:SetInvisible(true)
+        SPAM:SetInvisible(true)
+    end
+end )
 callbacks.Register( "Draw", function()
     if CHECKBOX:GetValue() then
         SLIDER:SetInvisible(false)
